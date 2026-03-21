@@ -1,6 +1,4 @@
 from fastmcp import FastMCP
-import httpx
-from travel_shared.schema.weather import WeatherRequest, WeatherResponse
 from travel_mcp.tools.flights import register_flight_tool
 from travel_mcp.tools.hotels import register_hotels_tool
 from travel_mcp.tools.weather import register_weather_tool

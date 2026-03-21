@@ -1,8 +1,10 @@
 import json
+from pathlib import Path
 
 class PlaceService:
     def __init__(self):
-        with open('travel_mcp/data/places.json', 'r') as f:
+        data_file = Path(__file__).resolve().parent.parent / "data" / "places.json"
+        with data_file.open("r", encoding="utf-8") as f:
             self.places_data = json.load(f)
 
     def search_places(self, city, category=None, budget=None):
