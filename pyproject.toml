@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.14"
 # Adding these ensures they aren't uninstalled during 'uv sync'
 dependencies = [
+    "python-dotenv>=1.2.2",
     "travel_agent",
     "travel_mcp",
 ]
