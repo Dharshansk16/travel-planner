@@ -4,18 +4,24 @@ version = "0.1.0"
 description = "travel planner"
 readme = "README.md"
 requires-python = ">=3.14"
-# Adding these ensures they aren't uninstalled during 'uv sync'
+
 dependencies = [
-    "travel_agent",
-    "travel_mcp",
+    "travel-agent",
+    "travel-mcp",
+    "travel-shared",
 ]
 
+[tool.uv]
+package = false
+
 [tool.uv.sources]
-travel_agent = { workspace = true }
-travel_mcp = { workspace = true }
+travel-agent = { workspace = true }
+travel-mcp = { workspace = true }
+travel-shared = { workspace = true }   
 
 [tool.uv.workspace]
 members = [
     "packages/travel_agent",
     "packages/travel_mcp",
+    "packages/travel_shared",
 ]
