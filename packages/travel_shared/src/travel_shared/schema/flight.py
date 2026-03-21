@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
-from datetime import date
+import datetime as dt
 
 
 #note
@@ -16,7 +16,7 @@ class FlightSearchRequest(BaseModel):
         ...,
         description="Arrival airport or city code Delhi"
     )
-    date: date = Field(
+    date: dt.date = Field(
         ...,
         description="Travel date in YYYY-MM-DD format"
     )
