@@ -8,14 +8,17 @@ requires-python = ">=3.14"
 dependencies = [
     "travel_agent",
     "travel_mcp",
+    "travel_shared",
 ]
 
 [tool.uv.sources]
 travel_agent = { workspace = true }
 travel_mcp = { workspace = true }
+travel_shared = { workspace = true }   
 
 [tool.uv.workspace]
 members = [
     "packages/travel_agent",
     "packages/travel_mcp",
+    "packages/travel_shared",
 ]

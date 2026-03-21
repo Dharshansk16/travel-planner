@@ -1,6 +1,6 @@
 from fastmcp import FastMCP
 import httpx
-from .schemas.weather import WeatherRequest, WeatherResponse
+from travel_shared.schema.weather import WeatherRequest, WeatherResponse
 
 mcp=FastMCP("TravelMCPServer")
 
