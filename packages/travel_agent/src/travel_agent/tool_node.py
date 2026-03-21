@@ -6,7 +6,7 @@ from travel_agent.extract_action import extract_action
 load_dotenv()
 
 class ToolNode:
-    LOCATION_TOOLS = {"estimate_cost", "get_weather", "get_rating"}
+    LOCATION_TOOLS = {"estimate_cost", "fetch_weather", "get_rating"}
 
     def __init__(self, tools: dict):
         self.tools = tools

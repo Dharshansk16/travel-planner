@@ -3,7 +3,7 @@ import re
 VALID_TOOLS = [
     "get_nearby_locations",
     "estimate_cost",
-    "get_weather",
+    "fetch_weather",
     "get_rating",
     "finalize"
 ]

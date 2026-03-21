@@ -34,7 +34,7 @@ Places found so far: {len(places)}
 AVAILABLE TOOLS:
 - get_nearby_locations  (call FIRST to find places)
 - estimate_cost         (call to check costs)
-- get_weather           (call to verify weather)
+- fetch_weather           (call to verify weather)
 - get_rating            (call to check ratings)
 - finalize              (call when you have enough data)
 
