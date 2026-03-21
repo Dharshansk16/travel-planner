@@ -1,0 +1,20 @@
+[
+  {
+    "hotel_id": "H001",
+    "city": "Delhi",
+    "name": "Budget Stay Inn",
+    "location": "Karol Bagh",
+    "price_per_night": 2000,
+    "rating": 3.8,
+    "amenities": ["wifi"]
+  },
+  {
+    "hotel_id": "H002",
+    "city": "Delhi",
+    "name": "Luxury Palace",
+    "location": "CP",
+    "price_per_night": 5000,
+    "rating": 4.5,
+    "amenities": ["wifi", "pool", "breakfast"]
+  }
+]
