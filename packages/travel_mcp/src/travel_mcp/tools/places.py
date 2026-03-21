@@ -1,6 +1,6 @@
 from travel_mcp.services.place_service import PlaceService
 from fastmcp import FastMCP
-from travel_shared.schema.place import PlaceSearchRequest, PlaceSearchResponse
+from travel_shared.schema.places import PlaceSearchRequest, PlaceSearchResponse
 
 place_service = PlaceService()
 
