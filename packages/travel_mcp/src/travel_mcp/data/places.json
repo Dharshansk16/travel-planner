@@ -1,0 +1,18 @@
+[
+  {
+    "place_id": "P001",
+    "city": "Delhi",
+    "name": "India Gate",
+    "category": "history",
+    "avg_time_spent": 1.5,
+    "cost": 0
+  },
+  {
+    "place_id": "P002",
+    "city": "Delhi",
+    "name": "Chandni Chowk",
+    "category": "food",
+    "avg_time_spent": 3,
+    "cost": 500
+  }
+]
