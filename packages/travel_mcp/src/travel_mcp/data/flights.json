@@ -1,0 +1,24 @@
+[
+  {
+    "flight_id": "FL001",
+    "source": "Bangalore",
+    "destination": "Delhi",
+    "date": "2026-04-10",
+    "airline": "IndiGo",
+    "departure_time": "08:00",
+    "arrival_time": "11:00",
+    "price": 4200,
+    "duration": 180
+  },
+  {
+    "flight_id": "FL002",
+    "source": "Bangalore",
+    "destination": "Delhi",
+    "date": "2026-04-10",
+    "airline": "Air India",
+    "departure_time": "14:00",
+    "arrival_time": "17:30",
+    "price": 5200,
+    "duration": 210
+  }
+]
