@@ -11,8 +11,8 @@ class FlightService:
 
         res = [
             flight for flight in self.flight_data
-            if flight['source'] == source and
-               flight['destination'] == destination and
+            if flight['source'].lower() == source.lower() and
+               flight['destination'].lower() == destination.lower() and
                flight['date'] == date
         ]
         if budget is not None:
