@@ -1,5 +1,5 @@
-from .state import AgentState
-from .schema import TravelQuery
+from state import AgentState
+from schema import TravelQuery
 import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
@@ -18,7 +18,7 @@ def parser_input(state: AgentState):
     return {
         "dest": result.destination,
         "budget": result.budget,
-        "rating": result.min_rating,
+        # "rating": result.min_rating,
         "weather":result.weather,
     }
     
@@ -26,10 +26,10 @@ def parser_input(state: AgentState):
 def validate_input(state : AgentState):
     destination = state.get("dest")
     budget = state.get("budget")
-    rating = state.get("rating")
+    # rating = state.get("rating")
     weather = state.get("weather")
     
-    if not destination or not budget or not rating or not weather:
+    if not destination or not budget or not weather:
         print("--- Missing info , heading to Clarifying node")
         return "ask_clarifying"
     
@@ -42,7 +42,7 @@ def ask_clarifying_node(state : AgentState):
     
     if not state.get("dest") : missing_info.append("destination")
     if not state.get("budget") : missing_info.append("budget")
-    if not state.get("rating") : missing_info.append("rating")
+    # if not state.get("rating") : missing_info.append("rating")
     if not state.get("weather") : missing_info.append("weather")
     
     needs = " and ".join(missing_info)

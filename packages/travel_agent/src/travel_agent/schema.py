@@ -12,10 +12,10 @@ class TravelQuery(BaseModel):
         description = "The maximum budget in numbers. If not explicitly mentioned by the user, return null. Do not guess."
         )
     
-    min_rating : Optional[float] = Field(
-        None , 
-        description = "Minimum star rating. Only fill if the user provides a number. Otherwise return null."
-    )
+    # min_rating : Optional[float] = Field(
+    #     None , 
+    #     description = "Minimum star rating. Only fill if the user provides a number. Otherwise return null."
+    # )
     
     weather : Optional [str] = Field (
         None , 
