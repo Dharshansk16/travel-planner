@@ -20,7 +20,6 @@ class HotelSearchResponse(BaseModel):
     city: str
     location: str
     price_per_night: float
-    price: float
     rating: float
     amenities: list[str]
 
