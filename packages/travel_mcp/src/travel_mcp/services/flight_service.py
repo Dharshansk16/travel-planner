@@ -26,12 +26,6 @@ class FlightService:
                if f['source'].lower()      == source_norm.lower()
                and f['destination'].lower() == dest_norm.lower()]
 
-        if date:
-            date_str = str(date)
-            filtered = [f for f in res if f['date'] == date_str]
-            if filtered:
-                res = filtered
-
         if budget is not None:
             res = [f for f in res if f['price'] <= budget]
 
