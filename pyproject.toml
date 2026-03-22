@@ -6,22 +6,27 @@ readme = "README.md"
 requires-python = ">=3.14"
 
 dependencies = [
-    "travel-agent",
-    "travel-mcp",
-    "travel-shared",
+    "travel_agent",
+    "travel_mcp",
+    "travel_shared",
+>>>>>>> origin/devika
 ]
 
 [tool.uv]
 package = false
 
 [tool.uv.sources]
+
 travel-agent = { workspace = true }
 travel-mcp = { workspace = true }
 travel-shared = { workspace = true }   
+
 
 [tool.uv.workspace]
 members = [
     "packages/travel_agent",
     "packages/travel_mcp",
     "packages/travel_shared",
+
 ]
+

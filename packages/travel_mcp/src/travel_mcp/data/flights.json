@@ -1,0 +1,17 @@
+[
+  {"flight_id": "FL001", "source": "Bangalore", "destination": "Delhi", "date": "2026-04-10", "airline": "IndiGo", "departure_time": "08:00", "arrival_time": "11:00", "price": 4200, "duration": 180},
+  {"flight_id": "FL002", "source": "Bangalore", "destination": "Delhi", "date": "2026-04-10", "airline": "Air India", "departure_time": "14:00", "arrival_time": "17:30", "price": 5200, "duration": 210},
+  {"flight_id": "FL003", "source": "Bangalore", "destination": "Goa", "date": "2026-04-10", "airline": "IndiGo", "departure_time": "09:00", "arrival_time": "10:30", "price": 3200, "duration": 90},
+  {"flight_id": "FL004", "source": "Bangalore", "destination": "Goa", "date": "2026-04-10", "airline": "SpiceJet", "departure_time": "16:00", "arrival_time": "17:30", "price": 2800, "duration": 90},
+  {"flight_id": "FL005", "source": "Bangalore", "destination": "Mumbai", "date": "2026-04-10", "airline": "IndiGo", "departure_time": "07:00", "arrival_time": "08:30", "price": 3500, "duration": 90},
+  {"flight_id": "FL006", "source": "Bangalore", "destination": "Mumbai", "date": "2026-04-10", "airline": "Air India", "departure_time": "13:00", "arrival_time": "14:30", "price": 4000, "duration": 90},
+  {"flight_id": "FL007", "source": "Bangalore", "destination": "Manali", "date": "2026-04-10", "airline": "Air India", "departure_time": "06:00", "arrival_time": "09:00", "price": 6500, "duration": 180},
+  {"flight_id": "FL008", "source": "Bangalore", "destination": "Delhi", "date": "2026-05-01", "airline": "IndiGo", "departure_time": "08:00", "arrival_time": "11:00", "price": 4500, "duration": 180},
+  {"flight_id": "FL009", "source": "Bangalore", "destination": "Goa", "date": "2026-05-01", "airline": "IndiGo", "departure_time": "09:00", "arrival_time": "10:30", "price": 3400, "duration": 90},
+  {"flight_id": "FL010", "source": "Bangalore", "destination": "Mumbai", "date": "2026-05-01", "airline": "SpiceJet", "departure_time": "07:00", "arrival_time": "08:30", "price": 3200, "duration": 90},
+  {"flight_id": "FL011", "source": "Bangalore", "destination": "Kochi", "date": "2026-04-10", "airline": "IndiGo", "departure_time": "10:00", "arrival_time": "11:15", "price": 2500, "duration": 75},
+  {"flight_id": "FL012", "source": "Bangalore", "destination": "Kochi", "date": "2026-05-01", "airline": "SpiceJet", "departure_time": "14:00", "arrival_time": "15:15", "price": 2200, "duration": 75},
+  {"flight_id": "FL013", "source": "Bangalore", "destination": "Jaipur", "date": "2026-04-10", "airline": "IndiGo", "departure_time": "06:30", "arrival_time": "09:30", "price": 5500, "duration": 180},
+  {"flight_id": "FL014", "source": "Bangalore", "destination": "Jaipur", "date": "2026-04-10", "airline": "Air India", "departure_time": "13:00", "arrival_time": "16:00", "price": 6200, "duration": 180},
+  {"flight_id": "FL015", "source": "Bangalore", "destination": "Jaipur", "date": "2026-05-01", "airline": "SpiceJet", "departure_time": "08:00", "arrival_time": "11:00", "price": 4800, "duration": 180}
+]
