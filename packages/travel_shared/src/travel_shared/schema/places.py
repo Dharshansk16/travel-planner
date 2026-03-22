@@ -25,3 +25,4 @@ class PlaceSearchResponse(BaseModel):
     category: str
     avg_time_spent: float
     cost: int
+    rating: float

@@ -18,6 +18,7 @@ def register_hotels_tool(mcp: FastMCP):
                 name=hotel["name"],
                 city=hotel["city"],
                 location=hotel["location"],
+                price_per_night=hotel["price_per_night"],
                 price=hotel["price_per_night"],
                 rating=hotel["rating"],
                 amenities=hotel["amenities"],
