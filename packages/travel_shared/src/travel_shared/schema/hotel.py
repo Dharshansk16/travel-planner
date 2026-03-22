@@ -2,8 +2,6 @@ from pydantic import AliasChoices, BaseModel, ConfigDict, Field
 from typing import Optional
 
 class HotelSearchRequest(BaseModel):
-    model_config = ConfigDict(extra="ignore")
-
     destination: str = Field(
         ...,
         validation_alias=AliasChoices("destination", "city"),
