@@ -33,4 +33,6 @@ class FlightSearchResponse(BaseModel):
     date: str
     airline: str
     departure_time: str
+    arrival_time: str
     price: float
+    duration: int
