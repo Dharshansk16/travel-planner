@@ -20,5 +20,159 @@
     "arrival_time": "17:30",
     "price": 5200,
     "duration": 210
+  },
+  {
+    "flight_id": "FL003",
+    "source": "Bangalore",
+    "destination": "Goa",
+    "date": "2026-04-10",
+    "airline": "Akasa Air",
+    "departure_time": "06:45",
+    "arrival_time": "07:55",
+    "price": 3200,
+    "duration": 70
+  },
+  {
+    "flight_id": "FL004",
+    "source": "Bangalore",
+    "destination": "Goa",
+    "date": "2026-04-10",
+    "airline": "IndiGo",
+    "departure_time": "18:20",
+    "arrival_time": "19:35",
+    "price": 4100,
+    "duration": 75
+  },
+  {
+    "flight_id": "FL005",
+    "source": "Bangalore",
+    "destination": "Mumbai",
+    "date": "2026-04-10",
+    "airline": "Vistara",
+    "departure_time": "09:10",
+    "arrival_time": "10:55",
+    "price": 3800,
+    "duration": 105
+  },
+  {
+    "flight_id": "FL006",
+    "source": "Bangalore",
+    "destination": "Mumbai",
+    "date": "2026-04-10",
+    "airline": "Air India",
+    "departure_time": "20:00",
+    "arrival_time": "21:45",
+    "price": 4600,
+    "duration": 105
+  },
+  {
+    "flight_id": "FL007",
+    "source": "Bangalore",
+    "destination": "Kochi",
+    "date": "2026-04-10",
+    "airline": "IndiGo",
+    "departure_time": "07:30",
+    "arrival_time": "08:35",
+    "price": 2800,
+    "duration": 65
+  },
+  {
+    "flight_id": "FL008",
+    "source": "Bangalore",
+    "destination": "Kochi",
+    "date": "2026-04-10",
+    "airline": "Akasa Air",
+    "departure_time": "16:15",
+    "arrival_time": "17:20",
+    "price": 3300,
+    "duration": 65
+  },
+  {
+    "flight_id": "FL009",
+    "source": "Bangalore",
+    "destination": "Manali",
+    "date": "2026-04-10",
+    "airline": "Air India",
+    "departure_time": "05:50",
+    "arrival_time": "09:40",
+    "price": 7600,
+    "duration": 230
+  },
+  {
+    "flight_id": "FL010",
+    "source": "Bangalore",
+    "destination": "Manali",
+    "date": "2026-04-10",
+    "airline": "IndiGo",
+    "departure_time": "12:10",
+    "arrival_time": "16:05",
+    "price": 8400,
+    "duration": 235
+  },
+  {
+    "flight_id": "FL011",
+    "source": "Bangalore",
+    "destination": "Delhi",
+    "date": "2026-04-11",
+    "airline": "Vistara",
+    "departure_time": "07:20",
+    "arrival_time": "10:05",
+    "price": 4700,
+    "duration": 165
+  },
+  {
+    "flight_id": "FL012",
+    "source": "Bangalore",
+    "destination": "Goa",
+    "date": "2026-04-11",
+    "airline": "Air India",
+    "departure_time": "10:40",
+    "arrival_time": "11:55",
+    "price": 3500,
+    "duration": 75
+  },
+  {
+    "flight_id": "FL013",
+    "source": "Mumbai",
+    "destination": "Delhi",
+    "date": "2026-04-10",
+    "airline": "IndiGo",
+    "departure_time": "08:25",
+    "arrival_time": "10:35",
+    "price": 3900,
+    "duration": 130
+  },
+  {
+    "flight_id": "FL014",
+    "source": "Delhi",
+    "destination": "Bangalore",
+    "date": "2026-04-10",
+    "airline": "Air India",
+    "departure_time": "19:15",
+    "arrival_time": "22:00",
+    "price": 5100,
+    "duration": 165
+  },
+  {
+    "flight_id": "FL015",
+    "source": "Kochi",
+    "destination": "Bangalore",
+    "date": "2026-04-10",
+    "airline": "IndiGo",
+    "departure_time": "13:10",
+    "arrival_time": "14:20",
+    "price": 3000,
+    "duration": 70
+  },
+  {
+    "flight_id": "FL016",
+    "source": "Goa",
+    "destination": "Bangalore",
+    "date": "2026-04-10",
+    "airline": "Akasa Air",
+    "departure_time": "21:10",
+    "arrival_time": "22:25",
+    "price": 3600,
+    "duration": 75
   }
 ]

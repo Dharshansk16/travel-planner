@@ -12,7 +12,135 @@
     "city": "Delhi",
     "name": "Chandni Chowk",
     "category": "food",
-    "avg_time_spent": 3,
+    "avg_time_spent": 3.0,
     "cost": 500
+  },
+  {
+    "place_id": "P003",
+    "city": "Delhi",
+    "name": "Qutub Minar",
+    "category": "history",
+    "avg_time_spent": 2.0,
+    "cost": 50
+  },
+  {
+    "place_id": "P004",
+    "city": "Goa",
+    "name": "Baga Beach",
+    "category": "beach",
+    "avg_time_spent": 3.5,
+    "cost": 0
+  },
+  {
+    "place_id": "P005",
+    "city": "Goa",
+    "name": "Dudhsagar Falls",
+    "category": "nature",
+    "avg_time_spent": 4.0,
+    "cost": 800
+  },
+  {
+    "place_id": "P006",
+    "city": "Goa",
+    "name": "Anjuna Flea Market",
+    "category": "shopping",
+    "avg_time_spent": 2.5,
+    "cost": 1200
+  },
+  {
+    "place_id": "P007",
+    "city": "Mumbai",
+    "name": "Gateway of India",
+    "category": "history",
+    "avg_time_spent": 1.5,
+    "cost": 0
+  },
+  {
+    "place_id": "P008",
+    "city": "Mumbai",
+    "name": "Juhu Beach",
+    "category": "beach",
+    "avg_time_spent": 2.5,
+    "cost": 300
+  },
+  {
+    "place_id": "P009",
+    "city": "Mumbai",
+    "name": "Colaba Causeway",
+    "category": "shopping",
+    "avg_time_spent": 2.0,
+    "cost": 1500
+  },
+  {
+    "place_id": "P010",
+    "city": "Manali",
+    "name": "Solang Valley",
+    "category": "adventure",
+    "avg_time_spent": 4.0,
+    "cost": 1800
+  },
+  {
+    "place_id": "P011",
+    "city": "Manali",
+    "name": "Hidimba Devi Temple",
+    "category": "spiritual",
+    "avg_time_spent": 1.5,
+    "cost": 100
+  },
+  {
+    "place_id": "P012",
+    "city": "Manali",
+    "name": "Mall Road Manali",
+    "category": "shopping",
+    "avg_time_spent": 2.0,
+    "cost": 1000
+  },
+  {
+    "place_id": "P013",
+    "city": "Kochi",
+    "name": "Fort Kochi Beach",
+    "category": "beach",
+    "avg_time_spent": 2.5,
+    "cost": 0
+  },
+  {
+    "place_id": "P014",
+    "city": "Kochi",
+    "name": "Mattancherry Palace",
+    "category": "history",
+    "avg_time_spent": 2.0,
+    "cost": 100
+  },
+  {
+    "place_id": "P015",
+    "city": "Kochi",
+    "name": "Marine Drive Kochi",
+    "category": "nature",
+    "avg_time_spent": 1.5,
+    "cost": 200
+  },
+  {
+    "place_id": "P016",
+    "city": "Bangalore",
+    "name": "Lalbagh Botanical Garden",
+    "category": "nature",
+    "avg_time_spent": 2.0,
+    "cost": 80
+  },
+  {
+    "place_id": "P017",
+    "city": "Bangalore",
+    "name": "Cubbon Park",
+    "category": "nature",
+    "avg_time_spent": 1.5,
+    "cost": 0
+  },
+  {
+    "place_id": "P018",
+    "city": "Bangalore",
+    "name": "Commercial Street",
+    "category": "shopping",
+    "avg_time_spent": 3.0,
+    "cost": 1800
   }
 ]

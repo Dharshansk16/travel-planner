@@ -16,5 +16,149 @@
     "price_per_night": 5000,
     "rating": 4.5,
     "amenities": ["wifi", "pool", "breakfast"]
+  },
+  {
+    "hotel_id": "H003",
+    "city": "Delhi",
+    "name": "Metro Comfort Hotel",
+    "location": "Paharganj",
+    "price_per_night": 2800,
+    "rating": 4.0,
+    "amenities": ["wifi", "breakfast", "ac"]
+  },
+  {
+    "hotel_id": "H004",
+    "city": "Goa",
+    "name": "Calangute Bay Resort",
+    "location": "Calangute",
+    "price_per_night": 4200,
+    "rating": 4.3,
+    "amenities": ["wifi", "pool", "beach_access", "breakfast"]
+  },
+  {
+    "hotel_id": "H005",
+    "city": "Goa",
+    "name": "Backpacker Nest Goa",
+    "location": "Anjuna",
+    "price_per_night": 1600,
+    "rating": 3.9,
+    "amenities": ["wifi", "shared_kitchen"]
+  },
+  {
+    "hotel_id": "H006",
+    "city": "Goa",
+    "name": "South Shore Retreat",
+    "location": "Colva",
+    "price_per_night": 3100,
+    "rating": 4.1,
+    "amenities": ["wifi", "parking", "breakfast"]
+  },
+  {
+    "hotel_id": "H007",
+    "city": "Mumbai",
+    "name": "Marine Drive Residency",
+    "location": "Churchgate",
+    "price_per_night": 5400,
+    "rating": 4.4,
+    "amenities": ["wifi", "gym", "breakfast"]
+  },
+  {
+    "hotel_id": "H008",
+    "city": "Mumbai",
+    "name": "Andheri Budget Rooms",
+    "location": "Andheri East",
+    "price_per_night": 2400,
+    "rating": 3.7,
+    "amenities": ["wifi", "ac"]
+  },
+  {
+    "hotel_id": "H009",
+    "city": "Mumbai",
+    "name": "Harbor View Suites",
+    "location": "Colaba",
+    "price_per_night": 6500,
+    "rating": 4.6,
+    "amenities": ["wifi", "pool", "gym", "breakfast"]
+  },
+  {
+    "hotel_id": "H010",
+    "city": "Manali",
+    "name": "Snowline Lodge",
+    "location": "Old Manali",
+    "price_per_night": 2700,
+    "rating": 4.2,
+    "amenities": ["wifi", "mountain_view", "heater"]
+  },
+  {
+    "hotel_id": "H011",
+    "city": "Manali",
+    "name": "Riverbend Retreat",
+    "location": "Vashisht",
+    "price_per_night": 3600,
+    "rating": 4.4,
+    "amenities": ["wifi", "parking", "breakfast", "heater"]
+  },
+  {
+    "hotel_id": "H012",
+    "city": "Manali",
+    "name": "Pinewood Budget Stay",
+    "location": "Mall Road",
+    "price_per_night": 1800,
+    "rating": 3.8,
+    "amenities": ["wifi", "room_service"]
+  },
+  {
+    "hotel_id": "H013",
+    "city": "Kochi",
+    "name": "Fort Kochi Heritage House",
+    "location": "Fort Kochi",
+    "price_per_night": 3300,
+    "rating": 4.3,
+    "amenities": ["wifi", "breakfast", "airport_shuttle"]
+  },
+  {
+    "hotel_id": "H014",
+    "city": "Kochi",
+    "name": "Marine Wharf Inn",
+    "location": "Marine Drive",
+    "price_per_night": 2500,
+    "rating": 4.0,
+    "amenities": ["wifi", "ac", "breakfast"]
+  },
+  {
+    "hotel_id": "H015",
+    "city": "Kochi",
+    "name": "Backwater Comforts",
+    "location": "Vyttila",
+    "price_per_night": 2100,
+    "rating": 3.9,
+    "amenities": ["wifi", "parking"]
+  },
+  {
+    "hotel_id": "H016",
+    "city": "Bangalore",
+    "name": "Garden City Hotel",
+    "location": "MG Road",
+    "price_per_night": 3900,
+    "rating": 4.2,
+    "amenities": ["wifi", "gym", "breakfast"]
+  },
+  {
+    "hotel_id": "H017",
+    "city": "Bangalore",
+    "name": "Tech Park Residency",
+    "location": "Whitefield",
+    "price_per_night": 3200,
+    "rating": 4.1,
+    "amenities": ["wifi", "parking", "ac"]
+  },
+  {
+    "hotel_id": "H018",
+    "city": "Bangalore",
+    "name": "Budget Hub Stay",
+    "location": "Majestic",
+    "price_per_night": 1700,
+    "rating": 3.6,
+    "amenities": ["wifi"]
   }
 ]
