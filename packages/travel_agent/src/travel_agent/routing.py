@@ -1,23 +1,28 @@
 from travel_agent.state import AgentState
 from travel_agent.extract_action import extract_action
 
-MAX_TOOL_CALLS = 8
+MAX_TOOL_CALLS = 10
 
 def should_call_tool(state: AgentState) -> str:
     msgs = state.get("messages", [])
 
-    # Count tool calls so far — safety limit
-    tool_count = sum(1 for m in msgs if isinstance(m, dict) and m.get("role") == "tool")
+    tool_count = sum(1 for m in msgs
+                     if (hasattr(m, "content") and
+                         isinstance(m.content, str) and
+                         m.content.startswith("[TOOL RESULT]")))
+
     if tool_count >= MAX_TOOL_CALLS:
-        print(f"[routing] Max tool calls ({MAX_TOOL_CALLS}) reached. Forcing stop.")
+        print(f"[routing] Max tool calls reached. Forcing stop.")
         return "filter"
 
-    # Get last assistant message
-    last = next(
-        (m["content"] for m in reversed(msgs)
-         if isinstance(m, dict) and m.get("role") == "assistant"),
-        ""
-    )
+    last = ""
+    for m in reversed(msgs):
+        if hasattr(m, "type") and m.type == "ai":
+            last = m.content
+            break
+        if isinstance(m, dict) and m.get("role") == "assistant":
+            last = m["content"]
+            break
 
     if not last:
         return "tool"
