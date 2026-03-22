@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
   {"hotel_id": "H001", "city": "Delhi", "name": "Budget Stay Inn", "location": "Karol Bagh", "price_per_night": 2000, "rating": 3.8, "amenities": ["wifi"]},
   {"hotel_id": "H002", "city": "Delhi", "name": "Luxury Palace", "location": "Connaught Place", "price_per_night": 5000, "rating": 4.5, "amenities": ["wifi", "pool", "breakfast"]},
   {"hotel_id": "H003", "city": "Delhi", "name": "City Comfort", "location": "Lajpat Nagar", "price_per_night": 3000, "rating": 4.1, "amenities": ["wifi", "breakfast"]},
@@ -16,3 +17,24 @@
   {"hotel_id": "H015", "city": "Jaipur", "name": "Pink City Haveli", "location": "Old City", "price_per_night": 3500, "rating": 4.5, "amenities": ["wifi", "breakfast", "heritage view"]},
   {"hotel_id": "H016", "city": "Jaipur", "name": "Budget Rajputana", "location": "MI Road", "price_per_night": 1800, "rating": 4.0, "amenities": ["wifi", "breakfast"]}
 ]
+=======
+  {
+    "hotel_id": "H001",
+    "city": "Delhi",
+    "name": "Budget Stay Inn",
+    "location": "Karol Bagh",
+    "price_per_night": 2000,
+    "rating": 3.8,
+    "amenities": ["wifi"]
+  },
+  {
+    "hotel_id": "H002",
+    "city": "Delhi",
+    "name": "Luxury Palace",
+    "location": "CP",
+    "price_per_night": 5000,
+    "rating": 4.5,
+    "amenities": ["wifi", "pool", "breakfast"]
+  }
+]
+>>>>>>> c1cba09d19d71fcbe1eee273856dbeecffc70215

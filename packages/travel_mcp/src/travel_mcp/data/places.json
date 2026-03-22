@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
   {"place_id": "P001", "city": "Delhi", "name": "India Gate", "category": "history", "avg_time_spent": 1.5, "cost": 0, "rating": 4.5},
   {"place_id": "P002", "city": "Delhi", "name": "Chandni Chowk", "category": "food", "avg_time_spent": 3.0, "cost": 500, "rating": 4.2},
   {"place_id": "P003", "city": "Delhi", "name": "Qutub Minar", "category": "history", "avg_time_spent": 2.0, "cost": 30, "rating": 4.6},
@@ -29,3 +30,22 @@
   {"place_id": "P028", "city": "Jaipur", "name": "Johri Bazaar", "category": "shopping", "avg_time_spent": 2.0, "cost": 500, "rating": 4.2},
   {"place_id": "P029", "city": "Jaipur", "name": "Nahargarh Fort", "category": "nature", "avg_time_spent": 2.0, "cost": 100, "rating": 4.4}
 ]
+=======
+  {
+    "place_id": "P001",
+    "city": "Delhi",
+    "name": "India Gate",
+    "category": "history",
+    "avg_time_spent": 1.5,
+    "cost": 0
+  },
+  {
+    "place_id": "P002",
+    "city": "Delhi",
+    "name": "Chandni Chowk",
+    "category": "food",
+    "avg_time_spent": 3,
+    "cost": 500
+  }
+]
+>>>>>>> c1cba09d19d71fcbe1eee273856dbeecffc70215
