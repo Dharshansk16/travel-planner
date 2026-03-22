@@ -6,24 +6,20 @@ class WeatherService:
     @staticmethod
     async def fetch_weather(req: WeatherRequest) -> WeatherResponse:
         async with httpx.AsyncClient() as client:
-            geo = (await client.get(
-                f"https://geocoding-api.open-meteo.com/v1/search?name={req.destination}&count=1"
-            )).json()
+            res = await client.get(
+                f"https://wttr.in/{req.destination}",
+                params={"format": "j1"}
+            )
 
-            if not geo.get("results"):
-                raise ValueError(f"Could not find {req.destination}.")
+            data = res.json()
 
-            lat = geo["results"][0]["latitude"]
-            lon = geo["results"][0]["longitude"]
+            current = data["current_condition"][0]
 
-            weather = (await client.get(
-                f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
-            )).json()
-
-        cur = weather.get("current_weather", {})
+            description = current["weatherDesc"][0]["value"]
+            temp = float(current["temp_C"])
 
         return WeatherResponse(
             destination=req.destination,
-            temperature=cur.get("temperature", 0.0),
-            description=""
+            temperature=temp,
+            description=description
         )
