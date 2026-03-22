@@ -1,18 +1,20 @@
 [
-  {"hotel_id": "H001", "city": "Delhi", "name": "Budget Stay Inn", "location": "Karol Bagh", "price_per_night": 2000, "rating": 3.8, "amenities": ["wifi"]},
-  {"hotel_id": "H002", "city": "Delhi", "name": "Luxury Palace", "location": "Connaught Place", "price_per_night": 5000, "rating": 4.5, "amenities": ["wifi", "pool", "breakfast"]},
-  {"hotel_id": "H003", "city": "Delhi", "name": "City Comfort", "location": "Lajpat Nagar", "price_per_night": 3000, "rating": 4.1, "amenities": ["wifi", "breakfast"]},
-  {"hotel_id": "H004", "city": "Goa", "name": "Beach Paradise", "location": "Baga", "price_per_night": 3500, "rating": 4.4, "amenities": ["wifi", "pool", "beach access"]},
-  {"hotel_id": "H005", "city": "Goa", "name": "Sea Breeze Inn", "location": "Calangute", "price_per_night": 2500, "rating": 4.1, "amenities": ["wifi", "breakfast"]},
-  {"hotel_id": "H006", "city": "Goa", "name": "Budget Shack", "location": "Anjuna", "price_per_night": 1500, "rating": 3.7, "amenities": ["wifi"]},
-  {"hotel_id": "H007", "city": "Mumbai", "name": "Metro Stay", "location": "Andheri", "price_per_night": 3000, "rating": 4.0, "amenities": ["wifi", "breakfast"]},
-  {"hotel_id": "H008", "city": "Mumbai", "name": "Seaside Grand", "location": "Marine Drive", "price_per_night": 6000, "rating": 4.6, "amenities": ["wifi", "pool", "breakfast", "sea view"]},
-  {"hotel_id": "H009", "city": "Manali", "name": "Snow View Resort", "location": "Mall Road", "price_per_night": 4000, "rating": 4.5, "amenities": ["wifi", "breakfast", "mountain view"]},
-  {"hotel_id": "H010", "city": "Manali", "name": "Valley Retreat", "location": "Old Manali", "price_per_night": 2500, "rating": 4.2, "amenities": ["wifi", "breakfast"]},
-  {"hotel_id": "H011", "city": "Bangalore", "name": "Treebo Trend", "location": "MG Road", "price_per_night": 2500, "rating": 4.1, "amenities": ["wifi", "breakfast"]},
-  {"hotel_id": "H012", "city": "Bangalore", "name": "ITC Gardenia", "location": "Residency Road", "price_per_night": 6000, "rating": 4.7, "amenities": ["wifi", "pool", "spa"]},
-  {"hotel_id": "H013", "city": "Kochi", "name": "Casino Hotel", "location": "Willingdon Island", "price_per_night": 4500, "rating": 4.5, "amenities": ["wifi", "pool", "breakfast"]},
-  {"hotel_id": "H014", "city": "Kochi", "name": "Fort House", "location": "Fort Kochi", "price_per_night": 3000, "rating": 4.3, "amenities": ["wifi", "breakfast"]},
-  {"hotel_id": "H015", "city": "Jaipur", "name": "Pink City Haveli", "location": "Old City", "price_per_night": 3500, "rating": 4.5, "amenities": ["wifi", "breakfast", "heritage view"]},
-  {"hotel_id": "H016", "city": "Jaipur", "name": "Budget Rajputana", "location": "MI Road", "price_per_night": 1800, "rating": 4.0, "amenities": ["wifi", "breakfast"]}
+  {
+    "hotel_id": "H001",
+    "city": "Delhi",
+    "name": "Budget Stay Inn",
+    "location": "Karol Bagh",
+    "price_per_night": 2000,
+    "rating": 3.8,
+    "amenities": ["wifi"]
+  },
+  {
+    "hotel_id": "H002",
+    "city": "Delhi",
+    "name": "Luxury Palace",
+    "location": "CP",
+    "price_per_night": 5000,
+    "rating": 4.5,
+    "amenities": ["wifi", "pool", "breakfast"]
+  }
 ]

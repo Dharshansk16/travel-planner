@@ -1,6 +1,11 @@
 from pydantic import BaseModel, Field
 from typing import Optional
-from datetime import date as date_type
+import datetime as dt
+
+
+#note
+#... means the field is required
+#ge=0 mean value should be greater than or equal to 0
 
 class FlightSearchRequest(BaseModel):
     source: str = Field(
@@ -11,8 +16,8 @@ class FlightSearchRequest(BaseModel):
         ...,
         description="Arrival airport or city code Delhi"
     )
-    date: Optional[str] = Field(
-        None,
+    date: dt.date = Field(
+        ...,
         description="Travel date in YYYY-MM-DD format"
     )
     budget: Optional[int] = Field(
@@ -22,10 +27,10 @@ class FlightSearchRequest(BaseModel):
     )
 
 class FlightSearchResponse(BaseModel):
-    flight_id:      str
-    source:         str
-    destination:    str
-    date:           str
-    airline:        str
+    flight_id: str
+    source: str
+    destination: str
+    date: str
+    airline: str
     departure_time: str
-    price:          float
+    price: float

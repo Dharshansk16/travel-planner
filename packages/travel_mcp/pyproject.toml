@@ -9,7 +9,10 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "fastmcp>=3.1.1",
+    "httpx>=0.28.1",
     "mcp>=1.26.0",
+    "pydantic>=2.12.5",
+    "travel-shared",
 ]
 
 [build-system]
