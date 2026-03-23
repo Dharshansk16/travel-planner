@@ -1,4 +1,7 @@
 import sys
+import os
+
+# Version 2.1.0-integration-final
 sys.path.insert(0, "packages/travel_agent/src")
 
 import streamlit as st
@@ -6,7 +9,6 @@ from langchain_core.messages import HumanMessage
 
 st.set_page_config(
     page_title="Travel Planner AI",
-    page_icon="✈️",
     layout="wide"
 )
 
@@ -137,13 +139,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ── Load graph ────────────────────────────────────────────────
 @st.cache_resource(show_spinner="Connecting to AI agent...")
 def load_graph():
     from travel_agent.graph import app
     return app
 
-# ── Session state ─────────────────────────────────────────────
 for k, v in {
     "chat":           [],
     "memory":         {},
@@ -154,7 +154,6 @@ for k, v in {
     if k not in st.session_state:
         st.session_state[k] = v
 
-# ── Agent runner ──────────────────────────────────────────────
 def run_agent(query: str):
     graph = load_graph()
     return graph.invoke({
@@ -177,7 +176,6 @@ def get_clarification_msg(result):
                 return c
     return None
 
-# ── Render plan ───────────────────────────────────────────────
 def render_plan(result):
     data     = result.get("final_data", {})
     dest     = data.get("destination", "")
@@ -191,11 +189,11 @@ def render_plan(result):
 
     st.markdown(f"""
     <div class="plan-header">
-        <h2>✈️ {source} → {dest}</h2>
+        <h2>{source} to {dest}</h2>
         <div class="plan-meta">
-            📅 {duration} day(s) &nbsp;·&nbsp;
-            💰 INR {budget:,} total budget &nbsp;·&nbsp;
-            🌤️ {weather}
+            {duration} day(s) &nbsp;·&nbsp;
+            INR {budget:,} total budget &nbsp;·&nbsp;
+            {weather}
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -203,32 +201,32 @@ def render_plan(result):
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        st.markdown('<div class="card"><div class="card-title">✈️ Flight</div>', unsafe_allow_html=True)
+        st.markdown('<div class="card"><div class="card-title">Flight</div>', unsafe_allow_html=True)
         if flight and flight.get("airline"):
             st.markdown(f"""
             <div class="flight-pill">
                 <b>{flight.get('airline')}</b><br>
-                🕐 {flight.get('departure_time', '?')} → {flight.get('arrival_time', '?')}<br>
-                💸 INR {flight.get('price', 0):,}
-                &nbsp;·&nbsp; ⏱️ {flight.get('duration', 0)} min
+                {flight.get('departure_time', '?')} to {flight.get('arrival_time', '?')}<br>
+                INR {flight.get('price', 0):,}
+                &nbsp;·&nbsp; {flight.get('duration', 0)} min
             </div>
             """, unsafe_allow_html=True)
         else:
             st.info("No direct flights found in database.")
         st.markdown('</div>', unsafe_allow_html=True)
 
-        st.markdown('<div class="card"><div class="card-title">🏨 Hotels</div>', unsafe_allow_html=True)
+        st.markdown('<div class="card"><div class="card-title">Hotels</div>', unsafe_allow_html=True)
         if hotels:
             for h in hotels[:3]:
                 rating = h.get('rating', 0)
-                stars  = "⭐" * round(rating)
+                stars  = "*" * round(rating)
                 amenities = ", ".join(h.get("amenities", []))
                 st.markdown(f"""
                 <div class="hotel-pill">
                     <b>{h.get('name', 'N/A')}</b><br>
-                    📍 {h.get('location', '')} &nbsp;·&nbsp; {stars} {rating}<br>
-                    💰 INR {h.get('price_per_night', 0):,}/night<br>
-                    🛎️ {amenities}
+                    {h.get('location', '')} &nbsp;·&nbsp; {stars} {rating}<br>
+                    INR {h.get('price_per_night', 0):,}/night<br>
+                    {amenities}
                 </div>
                 """, unsafe_allow_html=True)
         else:
@@ -236,27 +234,25 @@ def render_plan(result):
         st.markdown('</div>', unsafe_allow_html=True)
 
     with col2:
-        st.markdown('<div class="card"><div class="card-title">📍 Places to Visit</div>', unsafe_allow_html=True)
+        st.markdown('<div class="card"><div class="card-title">Places to Visit</div>', unsafe_allow_html=True)
         if places:
             for p in places:
                 rating = p.get("rating", 0)
-                stars  = "⭐" * round(float(rating)) if rating else ""
                 st.markdown(f"""
                 <div class="place-pill">
                     <b>{p.get('name', 'N/A')}</b>
                     <span class="badge">{p.get('category', '')}</span><br>
-                    ⏱️ ~{p.get('avg_time_spent', 0)}hrs
-                    &nbsp;·&nbsp; 💰 INR {p.get('cost', 0)}
-                    &nbsp;·&nbsp; {stars} {rating}
+                    ~{p.get('avg_time_spent', 0)}hrs
+                    &nbsp;·&nbsp; INR {p.get('cost', 0)}
+                    &nbsp;·&nbsp; Rating: {rating}
                 </div>
                 """, unsafe_allow_html=True)
         else:
             st.info("No places found.")
         st.markdown('</div>', unsafe_allow_html=True)
 
-        # Budget breakdown
         if flight or hotels:
-            st.markdown('<div class="card"><div class="card-title">💰 Budget Estimate</div>', unsafe_allow_html=True)
+            st.markdown('<div class="card"><div class="card-title">Budget Estimate</div>', unsafe_allow_html=True)
             flight_cost = flight.get("price", 0) if flight else 0
             hotel_cost  = hotels[0].get("price_per_night", 0) * duration if hotels else 0
             place_cost  = sum(p.get("cost", 0) for p in places[:3])
@@ -265,108 +261,82 @@ def render_plan(result):
             st.markdown(f"""
             | Item | Cost |
             |---|---|
-            | ✈️ Flight | INR {flight_cost:,} |
-            | 🏨 Hotel ({duration} nights) | INR {hotel_cost:,} |
-            | 📍 Places (top 3) | INR {place_cost:,} |
+            | Flight | INR {flight_cost:,} |
+            | Hotel ({duration} nights) | INR {hotel_cost:,} |
+            | Places (top 3) | INR {place_cost:,} |
             | **Total estimate** | **INR {total_est:,}** |
             """)
             if total_est > budget:
-                st.warning(f"⚠️ Estimated cost (INR {total_est:,}) exceeds budget (INR {budget:,})")
+                st.warning(f"Estimated cost (INR {total_est:,}) exceeds budget (INR {budget:,})")
             else:
                 remaining = budget - total_est
-                st.success(f"✅ Within budget! INR {remaining:,} remaining for food & misc.")
+                st.success(f"Within budget! INR {remaining:,} remaining.")
             st.markdown('</div>', unsafe_allow_html=True)
 
-    st.balloons()
-
-# ══════════════════════════════════════════════════════════════
-# LAYOUT
-# ══════════════════════════════════════════════════════════════
-
-# Hero
 st.markdown("""
 <div class="hero">
-    <h1>✈️ Travel Planner AI</h1>
-    <p>Powered by ReAct Agent + MCP · Ask in plain English</p>
+    <h1>Travel Planner AI</h1>
+    <p>Powered by ReAct Agent + MCP</p>
 </div>
 """, unsafe_allow_html=True)
 
-# Sidebar
 with st.sidebar:
-    st.markdown("### 🗺️ Destinations")
-    for dest, emoji, desc in [
-        ("Goa",       "🏖️", "Beaches · Nightlife · History"),
-        ("Manali",    "🏔️", "Mountains · Adventure · Snow"),
-        ("Mumbai",    "🌆", "City · Beaches · Food"),
-        ("Delhi",     "🏛️", "History · Culture · Food"),
-        ("Kochi",     "🌴", "Backwaters · History"),
-        ("Bangalore", "🌿", "Gardens · Tech · Food"),
+    st.markdown("### Destinations")
+    for dest, desc in [
+        ("Goa",       "Beaches and Nightlife"),
+        ("Manali",    "Mountains and Adventure"),
+        ("Mumbai",    "City and Culture"),
+        ("Delhi",     "History and Food"),
+        ("Kochi",     "Backwaters and History"),
+        ("Bangalore", "Gardens and Tech"),
     ]:
         st.markdown(f"""
         <div class="sidebar-dest">
-            {emoji} <b>{dest}</b><br>
+            <b>{dest}</b><br>
             <span style="color:#888;font-size:11px;">{desc}</span>
         </div>
         """, unsafe_allow_html=True)
 
     st.divider()
-    st.markdown("### 💡 Try These")
-    for ex in [
-        "Plan a trip to Goa for 4 days, budget 8000",
-        "Manali trip, 5 days, 15000 rupees",
-        "Trip to Mumbai, 3 days, budget 10000, sunny",
-        "Plan Delhi trip for 2 days, 6000 budget",
-    ]:
-        st.markdown(f'<span class="example-chip">💬 {ex}</span>', unsafe_allow_html=True)
-
-    st.divider()
-    if st.button("🗑️ Clear Chat"):
+    if st.button("Clear Chat"):
         for k in ["chat", "memory", "pending_query", "waiting_for", "travel_result"]:
             st.session_state[k] = [] if k == "chat" else {} if k == "memory" else None
         st.rerun()
 
-# Main content
 left, right = st.columns([1.2, 1])
 
 with left:
-    # Chat history
-    st.markdown("### 💬 Chat")
+    st.markdown("### Chat")
     chat_container = st.container(height=350)
     with chat_container:
         for msg in st.session_state.chat:
             if msg["role"] == "user":
-                st.markdown(f'<div class="msg-user"><span class="bubble-user">🧑 {msg["content"]}</span></div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="msg-user"><span class="bubble-user">User: {msg["content"]}</span></div>', unsafe_allow_html=True)
             else:
-                st.markdown(f'<div class="msg-agent"><span class="bubble-agent">🤖 {msg["content"]}</span></div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="msg-agent"><span class="bubble-agent">Agent: {msg["content"]}</span></div>', unsafe_allow_html=True)
 
-    # Input form
     with st.form("input_form", clear_on_submit=True):
-        placeholder = (f"Answer: {st.session_state.waiting_for[:50]}..."
-                       if st.session_state.waiting_for
-                       else "e.g. Plan a trip to Goa for 4 days, budget ₹8000")
-        user_input = st.text_input("", placeholder=placeholder, label_visibility="collapsed")
-        send       = st.form_submit_button("Send ✈️", use_container_width=True)
+        user_input = st.text_input("", placeholder="Plan your trip...", label_visibility="collapsed")
+        send       = st.form_submit_button("Send", use_container_width=True)
 
 with right:
-    st.markdown("### 🗓️ Your Plan")
+    st.markdown("### Your Plan")
     if st.session_state.travel_result:
         render_plan(st.session_state.travel_result)
     else:
         st.markdown("""
         <div style="text-align:center;padding:60px 20px;color:#aaa;">
-            <div style="font-size:48px;">🗺️</div>
             <div style="margin-top:12px;font-size:14px;">
                 Your travel plan will appear here
             </div>
         </div>
         """, unsafe_allow_html=True)
 
-# Process input
 if send and user_input.strip():
     text = user_input.strip()
     st.session_state.chat.append({"role": "user", "content": text})
 
-    with st.spinner("🤖 Planning your trip..."):
+    with st.spinner("Processing..."):
         if st.session_state.waiting_for and st.session_state.pending_query:
             combined = f"{st.session_state.pending_query}. {text}"
             st.session_state.waiting_for   = None
@@ -382,7 +352,7 @@ if send and user_input.strip():
             st.session_state.memory = {"source": "Bangalore"}
             st.session_state.chat.append({
                 "role": "agent",
-                "content": "✅ Your travel plan is ready! Check the right panel."
+                "content": "Your travel plan is ready."
             })
         else:
             clarification = get_clarification_msg(result)
