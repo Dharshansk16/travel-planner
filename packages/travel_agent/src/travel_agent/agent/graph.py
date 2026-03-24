@@ -46,7 +46,7 @@ workflow.add_edge("ask_clarifying", END)
 workflow.add_conditional_edges(
     "think",
     should_call_tool,
-    {"tool": "tool", "filter": "optimize"}
+    {"tool": "tool", "filter": "filter"}
 )
 
 workflow.add_edge("tool",     "think")

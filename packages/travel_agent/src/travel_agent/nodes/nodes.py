@@ -1,4 +1,4 @@
-from ..state import AgentState
+from travel_agent.agent.state import AgentState
 from travel_agent.utils.schema import TravelQuery
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
