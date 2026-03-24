@@ -2,7 +2,7 @@ import sys
 sys.path.insert(0, "packages/travel_agent/src")
 
 from langchain_core.messages import HumanMessage
-from travel_agent.graph import app
+from travel_agent.agent.graph import app
 
 def run_agent(user_input: str, memory: dict = None):
     return app.invoke({

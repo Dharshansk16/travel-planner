@@ -1,5 +1,5 @@
-from travel_agent.state import AgentState
-from travel_agent.extract_action import extract_action
+from travel_agent.agent.state import AgentState
+from travel_agent.nodes.extract_action import extract_action
 
 MAX_TOOL_CALLS = 10
 

@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_core.messages import AIMessage
-from travel_agent.state import AgentState
+from travel_agent.agent.state import AgentState
 
 load_dotenv()
 
@@ -9,7 +9,7 @@ llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
 
 # ── Bind real MCP tools to LLM ────────────────────────────────
 def get_llm_with_tools():
-    from travel_agent.mcp_client import get_tool_list
+    from travel_agent.utils.mcp_client import get_tool_list
     tools = get_tool_list()
     if tools:
         print(f"[think_node] Binding {len(tools)} real MCP tools to LLM")
