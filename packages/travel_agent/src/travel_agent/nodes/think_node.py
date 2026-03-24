@@ -7,7 +7,7 @@ load_dotenv()
 
 llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
 
-# ── Bind real MCP tools to LLM ────────────────────────────────
+
 def get_llm_with_tools():
     from travel_agent.utils.mcp_client import get_tool_list
     tools = get_tool_list()

@@ -1,12 +1,12 @@
 from langgraph.graph import StateGraph, END, START
 from travel_agent.agent.state import AgentState
 
-from travel_agent.agent.nodes.nodes        import parser_input, validate_input, ask_clarifying_node
-from travel_agent.agent.nodes.think_node   import think_node
-from travel_agent.agent.nodes.tool_node    import tool_node
-from travel_agent.agent.nodes.routing      import should_call_tool
-from travel_agent.agent.nodes.filter_node   import FilterNode
-from travel_agent.agent.nodes.generate_node import GenerateNode
+from travel_agent.nodes.nodes        import parser_input, validate_input, ask_clarifying_node
+from travel_agent.nodes.think_node   import think_node
+from travel_agent.nodes.tool_node    import tool_node
+from travel_agent.nodes.routing      import should_call_tool
+from travel_agent.nodes.filter_node   import FilterNode
+from travel_agent.nodes.generate_node import GenerateNode
 
 
 filter_node   = FilterNode()
