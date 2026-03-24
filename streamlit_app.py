@@ -141,7 +141,7 @@ st.markdown("""
 
 @st.cache_resource(show_spinner="Connecting to AI agent...")
 def load_graph():
-    from travel_agent.graph import app
+    from travel_agent.agent.graph import app
     return app
 
 for k, v in {

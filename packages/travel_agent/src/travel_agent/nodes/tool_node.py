@@ -2,8 +2,8 @@ import asyncio
 import json
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
-from travel_agent.state import AgentState
-from travel_agent.extract_action import extract_action
+from travel_agent.agent.state import AgentState
+from travel_agent.nodes.extract_action import extract_action
 
 load_dotenv()
 
