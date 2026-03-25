@@ -7,12 +7,12 @@ from langchain_core.messages import AIMessage
 load_dotenv()
 
 llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
+    model="llama-3.1-8b-instant",
     temperature=0
 ).with_structured_output(TravelQuery)
 
 def parser_input(state: AgentState):
-    # Merge with memory if exists
+   
     memory = state.get("memory") or {}
 
     result = llm.invoke(state["messages"])

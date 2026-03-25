@@ -15,11 +15,11 @@ combine_node  = CombineNode()
 filter_node   = FilterNode()
 generate_node = GenerateNode()
 
-# ── MCP Tools ─────────────────────────────────────────────────
+
 from travel_agent.mcp_client import load_tools
 tools, _client = load_tools()
 
-# ── Wrappers ──────────────────────────────────────────────────
+
 def think_step(state):    return think_node(state)
 def tool_step(state):     return tool_node(state, tools)
 def optimize_step(state): return optimize_node.process(state)
@@ -27,7 +27,7 @@ def combine_step(state):  return combine_node.process(state)
 def filter_step(state):   return filter_node.process(state)
 def generate_step(state): return generate_node.process(state)
 
-# ── Graph ─────────────────────────────────────────────────────
+
 workflow = StateGraph(AgentState)
 
 workflow.add_node("parser",         parser_input)

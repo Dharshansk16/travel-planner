@@ -44,6 +44,12 @@ class ToolNode:
 
     def _search_places(self, state: AgentState, msgs: list) -> AgentState:
         try:
+            # Check if the budget is exceeded
+            if not state.get("within_budget", True):
+                print("[ToolNode] Budget exceeded. Skipping places.")
+                self._add_message(msgs, "No places found due to budget constraints.")
+                return {**state, "messages": msgs, "places": []}
+
             result = invoke_tool(self.tools["search_places"], {
                 "req": {
                     "city":     state.get("dest", ""),
@@ -55,6 +61,7 @@ class ToolNode:
         except Exception as e:
             print(f"[ToolNode] Error in search_places: {e}")
             places = []
+
         print(f"[ToolNode] Places: {len(places)} found")
         self._add_message(msgs, f"Places found: {places}")
         return {**state, "messages": msgs, "places": places}
@@ -98,7 +105,7 @@ class ToolNode:
         try:
             result = invoke_tool(self.tools["fetch_weather"], {
                 "req": {
-                    "destination": state.get("dest", "")   # ← was "city", now "destination"
+                    "destination": state.get("dest", "")   
                 }
             })
             weather_data = parse_mcp_result(result)
@@ -112,7 +119,8 @@ class ToolNode:
 
     def run(self, state: AgentState) -> AgentState:
         msgs      = list(state.get("messages", []))
-        tool_name = extract_action(self._last_thought(msgs))
+        thought = self._last_thought(msgs)
+        tool_name = extract_action(thought)
         print(f"[ToolNode] Calling: {tool_name}")
 
         if tool_name == "search_places":

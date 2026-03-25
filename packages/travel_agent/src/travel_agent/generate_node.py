@@ -14,6 +14,7 @@ class GenerateNode:
         hotels   = data.get("hotels", [])
         places   = data.get("places", [])
         weather  = data.get("weather", "pleasant")
+        total_cost = data.get("total_cost", 0)
 
         answer = f"\n{'='*50}\n"
         answer += f"  TRAVEL PLAN: {source} → {dest}\n"
@@ -23,7 +24,7 @@ class GenerateNode:
         answer += f"Weather  : {weather}\n\n"
 
         answer += "--- FLIGHT ---\n"
-        if flight:
+        if flight and flight.get('price'):
             answer += (f"  {flight.get('airline','N/A')} | "
                        f"{flight.get('departure_time','')} → "
                        f"{flight.get('arrival_time','')} | "
@@ -39,7 +40,7 @@ class GenerateNode:
                            f"INR {h.get('price_per_night',0):,}/night | "
                            f"Rating: {h.get('rating',0)}\n")
         else:
-            answer += "  No hotels found.\n"
+            answer += "  No hotels found within budget.\n"
         answer += "\n"
 
         answer += "--- PLACES TO VISIT ---\n"
@@ -51,9 +52,15 @@ class GenerateNode:
                            f"~{p.get('avg_time_spent',0)}hrs | "
                            f"Rating: {p.get('rating','N/A')}\n")
         else:
-            answer += "  No places found.\n"
+            answer += "  No places found for this budget.\n"
 
-        answer += f"\nHave a wonderful trip to {dest}!\n"
+        
+        if not flight or not hotels:
+            answer += f"  BUDGET ALERT: I couldn't find a complete trip within INR {budget:,}.\n"
+            answer += f"The estimated cost is around INR {total_cost:,}. Try increasing your budget!\n"
+        else:
+            answer += f"\nTotal Estimated Cost: INR {total_cost:,}\n"
+            answer += f"Have a wonderful trip to {dest}!\n"
 
         state["final_answer"] = answer
         state["memory"] = {

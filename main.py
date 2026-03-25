@@ -48,7 +48,7 @@ def main():
         print("\n--- Planning your trip... ---\n")
         result = run_agent(user_input, memory)
 
-        # Keep asking clarifications until we get a final answer
+        
         for _ in range(3):
             answer = result.get("final_answer")
             if answer:

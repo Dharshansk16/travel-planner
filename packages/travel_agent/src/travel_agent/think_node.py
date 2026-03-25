@@ -5,9 +5,9 @@ from travel_agent.state import AgentState
 
 load_dotenv()
 
-llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
+llm = ChatGroq(model="llama-3.1-8b-instant", temperature=0)
 
-# ── Bind real MCP tools to LLM ────────────────────────────────
+
 def get_llm_with_tools():
     from travel_agent.mcp_client import get_tool_list
     tools = get_tool_list()
@@ -16,7 +16,7 @@ def get_llm_with_tools():
         return llm.bind_tools(tools)
     return llm
 
-# Load once at import time
+
 llm_with_tools = get_llm_with_tools()
 
 def think_node(state: AgentState) -> AgentState:
@@ -29,7 +29,7 @@ def think_node(state: AgentState) -> AgentState:
     places   = state.get("places", [])
     msgs     = list(state.get("messages", []))
 
-    # Track which tools have been called
+   
     tools_called = []
     for m in msgs:
         content = ""
@@ -39,7 +39,7 @@ def think_node(state: AgentState) -> AgentState:
         if "[TOOL RESULT] Flights found" in content: tools_called.append("search_flights")
         if "[TOOL RESULT] Hotels found"  in content: tools_called.append("search_hotels")
 
-    # Force finalize if all 3 tools called
+   
     if ("search_places"  in tools_called and
         "search_flights" in tools_called and
         "search_hotels"  in tools_called):

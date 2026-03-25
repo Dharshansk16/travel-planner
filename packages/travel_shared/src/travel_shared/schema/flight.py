@@ -3,9 +3,7 @@ from typing import Optional
 import datetime as dt
 
 
-#note
-#... means the field is required
-#ge=0 mean value should be greater than or equal to 0
+
 
 class FlightSearchRequest(BaseModel):
     source: str = Field(

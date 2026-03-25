@@ -9,12 +9,12 @@ class AgentState(TypedDict):
     weather:      Optional[str]
     weather_data: Optional[dict]
     rating:       Optional[float]
-    duration:     Optional[int]       # number of days
-    travel_date:  Optional[str]       # YYYY-MM-DD
-    source:       Optional[str]       # departure city
+    duration:     Optional[int]       
+    travel_date:  Optional[str]       
+    source:       Optional[str]       
     flight:       List[dict]
     hotels:       List[dict]
     places:       List[dict]
     final_data:   Optional[dict]
     final_answer: Optional[str]
-    memory:       Optional[dict]      # stores past preferences
+    memory:       Optional[dict]      
