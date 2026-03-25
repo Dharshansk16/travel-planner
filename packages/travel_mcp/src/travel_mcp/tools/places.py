@@ -6,23 +6,18 @@ from typing import Optional
 place_service = PlaceService()
 
 def register_place_tool(mcp: FastMCP):
-    @mcp.tool
-    def search_places(
-        city: Optional[str] = None,
-        category: Optional[str] = None,
-        budget: Optional[int] = None,
-        req: Optional[PlaceSearchRequest] = None,
-    ) -> list[PlaceSearchResponse]:
-        payload = req if req is not None else PlaceSearchRequest(
-            city=city or "",
-            category=category,
-            budget=budget,
-        )
-
+    @mcp.tool()
+    def search_places(req: PlaceSearchRequest) -> list[PlaceSearchResponse]:
+        """
+        Search for points of interest, attractions, or things to do in a specific city.
+        
+        Use this when a user asks for recommendations on what to see, visit, or do.
+        You can filter by category (e.g., 'museum', 'park', 'landmark') and budget.
+        """
         places = place_service.search_places(
-            city=payload.city,
-            category=payload.category,
-            budget=payload.budget,
+            city=req.city,
+            category=req.category,
+            budget=req.budget,
         )
 
         return [
