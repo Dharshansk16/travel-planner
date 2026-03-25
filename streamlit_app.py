@@ -1,4 +1,6 @@
 import sys
+import os
+
 sys.path.insert(0, "packages/travel_agent/src")
 
 import streamlit as st
@@ -216,11 +218,12 @@ def render_plan(result):
         if hotels:
             for h in hotels[:3]:
                 rating = h.get('rating', 0)
+                stars  = "*" * round(rating)
                 amenities = ", ".join(h.get("amenities", []))
                 st.markdown(f"""
                 <div class="hotel-pill">
                     <b>{h.get('name', 'N/A')}</b><br>
-                    {h.get('location', '')} &nbsp;·&nbsp; {rating} Rating<br>
+                    {h.get('location', '')} &nbsp;·&nbsp; {stars} {rating}<br>
                     INR {h.get('price_per_night', 0):,}/night<br>
                     {amenities}
                 </div>
@@ -238,9 +241,9 @@ def render_plan(result):
                 <div class="place-pill">
                     <b>{p.get('name', 'N/A')}</b>
                     <span class="badge">{p.get('category', '')}</span><br>
-                    Approx {p.get('avg_time_spent', 0)}hrs
+                    ~{p.get('avg_time_spent', 0)}hrs
                     &nbsp;·&nbsp; INR {p.get('cost', 0)}
-                    &nbsp;·&nbsp; {rating} Rating
+                    &nbsp;·&nbsp; Rating: {rating}
                 </div>
                 """, unsafe_allow_html=True)
         else:
